@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47" height="42" viewBox="0 0 47 42">
+    <g fill="none" fill-rule="evenodd" transform="translate(-192 -4042)">
+        <path fill="#FFF" d="M0 0h1366v4500H0z"/>
+        <rect width="1492" height="586" x="-62" y="3673" fill="#B6CAFB" opacity=".12" rx="10.498"/>
+        <rect width="78" height="78" x="176" y="4024" stroke="#5869F8" stroke-width="2" opacity=".3" rx="20.9"/>
+        <g transform="translate(193 4043)">
+            <text fill="#5869F8" font-family="ProximaNova-Bold, Proxima Nova" font-size="12.8" font-weight="bold">
+                <tspan x="4.822" y="12.8">A</tspan>
+            </text>
+            <text fill="#5869F8" font-family="ProximaNova-Bold, Proxima Nova" font-size="12.8" font-weight="bold">
+                <tspan x="32.157" y="35.2">B</tspan>
+            </text>
+            <rect width="44.8" height="17.6" stroke="#5869F8" stroke-width="2" rx="3.2"/>
+            <rect width="44.8" height="17.6" y="22.4" stroke="#5869F8" stroke-width="2" rx="3.2"/>
+        </g>
+    </g>
+</svg>
