@@ -250,8 +250,14 @@ img
 			height: 2px
 			background: #c4262c
 			left: 0
-			bottom: -30px
-		
+			bottom: -35px
+		&_center
+			margin: 0
+			text-align: center
+			&:before
+				left: 50%
+				transform: translateX(-50%)
+
 	&-certificate
 		padding: 60px 0 60px
 		&-list
@@ -518,4 +524,116 @@ img
 			text-align: center
 			max-width: 830px
 			margin: 0 auto
+	&-second
+		background: #f5f5f5
+		padding: 100px 0
+		&-description
+			color: #575757
+			font-size: 14px
+			font-weight: 500
+			margin-top: 65px
+			text-align: center
+		&-list
+			display: flex
+			margin-top: 95px
+		&-item
+			width: 25%
+			height: 230px
+			padding-left: 35px
+			border-left: 1px solid rgba(44, 50, 73, 0.1)
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			align-items: flex-start
+			&-info
+				color: #5f6a89
+			&-number
+				font-size: 68px
+				font-weight: 700
+			&-text
+				font-size: 12px
+				font-weight: 500
+				text-transform: uppercase
+		&-img
+			&_rotate
+				transform: rotate(90deg)
+	&-third
+		padding: 100px 0 110px
+		&-row
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 35px 0
+			&_reverse
+				flex-direction: row-reverse
+		&-left
+			width: 490px
+			flex-shrink: 0
+			margin-right: 100px
+			&_reverse
+				margin: 0 0 0 100px
+		&-right
+			&_reverse
+				text-align: right
+		&-img
+			width: 100%
+		&-title
+			color: $dark
+			font-size: 24px
+			font-weight: 700
+			margin-bottom: 35px
+		&-text
+			color: #575757
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.7
+			margin-bottom: 40px
+		&-link
+			text-decoration: none
+			color: $white
+			font-size: 14px
+			font-weight: 600
+			padding: 15px 90px 15px 20px
+			background: $active url(../img/arrow-next.svg) no-repeat center right 20px
+			background-size: 33px 10px
+			display: inline-block
+		&-container
+			margin-top: 80px
+	&-fourth
+		padding: 140px 0 140px
+		background: url(../img/about-bg2.jpg) no-repeat center
+		background-size: cover
+		&-block
+			display: flex
+			justify-content: flex-end
+		&-text
+			color: $white
+			font-size: 16px
+			font-weight: 500
+			line-height: 1.5
+			max-width: 680px
+			text-align: right
+	&-fifth
+		padding: 100px 0 80px
+		&-list
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+			margin-top: 115px
+		&-item
+			width: 380px
+			margin: 0 20px 20px 0
+			background: #f5f5f5
+			padding: 40px 55px 30px 40px
+			min-height: 275px
+		&-title
+			color: $active
+			font-size: 20px
+			font-weight: 700
+			margin-bottom: 35px
+		&-text
+			color: #4c505d
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.75
 @import "media" // Всегда в конце
