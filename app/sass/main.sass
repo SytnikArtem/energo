@@ -10,28 +10,47 @@
 		-moz-box-sizing: border-box
 		box-sizing: border-box
 
-*::-webkit-input-placeholder
-	color: rgba(87, 96, 111, 0.5)
+.project-search-input::-webkit-input-placeholder
+	color: #999a9f
 	opacity: 1
 
-*:-moz-placeholder
-	color: rgba(87, 96, 111, 0.5)
+.project-search-input:-moz-placeholder
+	color: #999a9f
 	opacity: 1
 
-*::-moz-placeholder
-	color: rgba(87, 96, 111, 0.5)
+.project-search-input::-moz-placeholder
+	color: #999a9f
 	opacity: 1
 
-*:-ms-input-placeholder
-	color: rgba(87, 96, 111, 0.5)
+.project-search-input:-ms-input-placeholder
+	color: #999a9f
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: rgba(87, 96, 111, 0.5)
-body input:required:valid,
-body textarea:required:valid
-	color: rgba(87, 96, 111, 0.5)
+.contacts-form-input::-webkit-input-placeholder
+	color: #5c5e66
+	opacity: 1
+
+.contacts-form-input:-moz-placeholder
+	color: #5c5e66
+	opacity: 1
+
+.contacts-form-input::-moz-placeholder
+	color: #5c5e66
+	opacity: 1
+
+.contacts-form-input:-ms-input-placeholder
+	color: #5c5e66
+	opacity: 1
+.contacts-form-input:focus:required:invalid, .contacts-form-input:required:valid
+	color: #5c5e66
+
+.project-search-input:focus:required:invalid
+	color: #999a9f
+.contacts-form-textarea:focus:required:invalid, .contacts-form-textarea:required:valid
+	color: #50525a
+
+.project-search-input:required:valid
+	color: #999a9f
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
 	margin: 0
@@ -210,12 +229,16 @@ img
 			align-items: flex-start
 			justify-content: flex-start
 			padding: 0 180px 0 0
+			&_news
+				justify-content: space-between
+				padding-right: 100px
+				align-items: center
 		&-text
 			color: #575757
 			font-size: 14px
 			font-weight: 500
 			line-height: 1.75
-			margin-left: 80px
+			margin-left: 25px
 			margin-top: -5px
 		&-list
 			display: flex
@@ -243,6 +266,10 @@ img
 		line-height: 0.82
 		position: relative
 		margin-left: 100px
+		width: 280px
+		line-height: 1
+		&_nomarg
+			margin-left: 0
 		&:before
 			position: absolute
 			content: ''
@@ -254,6 +281,7 @@ img
 		&_center
 			margin: 0
 			text-align: center
+			width: 100%
 			&:before
 				left: 50%
 				transform: translateX(-50%)
@@ -434,7 +462,7 @@ img
 	100%
 		opacity: 0
 .footer
-	background: linear-gradient(to right, #23385c 0%, #23385c 50%, #1d2f4e 50%, #1d2f4e 100%)
+	background: #23385c
 	&-flex
 		display: flex
 		justify-content: space-between
@@ -470,6 +498,15 @@ img
 		justify-content: space-between
 		padding: 60px 0 60px 90px
 		background: #1d2f4e
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			left: 100%
+			top: 0
+			background: #1d2f4e
 	&-list
 		&-link
 			color: $white
@@ -491,6 +528,8 @@ img
 			align-items: center
 			justify-content: flex-start
 			margin-bottom: 35px
+			&_sm
+				margin-bottom: 20px
 		&-img
 			margin-right: 20px
 			flex-shrink: 0
@@ -500,13 +539,21 @@ img
 			font-size: 18px
 			font-weight: 700
 			text-decoration: none
+			&_dark
+				color: $dark
 		&-mail
 			color: $white
 			font-size: 14px
 			text-decoration: underline
+			&_dark
+				color: $dark
+				font-weight: 500
 		&-text
 			color: $white
 			font-size: 14px
+			&_dark
+				color: $dark
+				font-weight: 500
 .about
 	&-first
 		padding: 100px 0 95px
@@ -516,6 +563,10 @@ img
 			background: url(../img/about-bg.jpg) no-repeat center
 			background-size: cover
 			margin: 95px 0
+			&_build
+				background: url(../img/build.jpg) no-repeat center
+				background-size: cover
+				margin: 115px 0 0
 		&-text
 			color: #575757
 			font-size: 16px
@@ -674,6 +725,7 @@ img
 		pointer-events: none
 		transition: opacity .5s ease
 		overflow: auto
+		cursor: auto
 		&.active
 			pointer-events: auto
 			opacity: 1
@@ -681,24 +733,26 @@ img
 			align-items: flex-start
 		&-block
 			width: 800px
-			padding-top: 300px
+			//padding-top: 300px
 			position: relative
 			margin: 50px 0
-			&_first
-				background: url(../img/employees1.jpg) no-repeat center
-				background-size: cover
-			&_second
-				background: url(../img/employees2.jpg) no-repeat center
-				background-size: cover
-			&_third
-				background: url(../img/employees3.jpg) no-repeat center
-				background-size: cover
-			&_fourth
-				background: url(../img/employees4.jpg) no-repeat center
-				background-size: cover
-			&_fifth
-				background: url(../img/employees5.jpg) no-repeat center
-				background-size: cover
+			//&_first
+			//	background: url(../img/employees1.jpg) no-repeat center
+			//	background-size: cover
+			//&_second
+			//	background: url(../img/employees2.jpg) no-repeat center
+			//	background-size: cover
+			//&_third
+			//	background: url(../img/employees3.jpg) no-repeat center
+			//	background-size: cover
+			//&_fourth
+			//	background: url(../img/employees4.jpg) no-repeat center
+			//	background-size: cover
+			//&_fifth
+			//	background: url(../img/employees5.jpg) no-repeat center
+			//	background-size: cover
+		&-img
+			width: 100%
 		&-content
 			background: #ffffff
 			padding: 55px 60px
@@ -737,4 +791,552 @@ img
 			background-size: 14px 14px
 			right: 0
 			top: 0
+.news
+	padding: 100px 0 100px
+	&-img
+		&_svg
+			height: 156px
+			width: auto
+			display: block
+			margin: 40px auto
+	&-filter
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		&-item
+			margin-left: 28px
+		&-link
+			color: $dark
+			font-size: 14px
+			font-weight: 700
+			text-decoration: none
+			transition: color .5s ease
+			&:hover
+				color: $active
+				.search
+					fill: $active
+			&.active
+				color: $active
+				.search
+					fill: $active
+		&-img
+			width: 14px
+			height: 14px
+			margin-top: 2px
+	&-list
+		display: flex
+		justify-content: flex-start
+		flex-wrap: wrap
+	&-item
+		width: calc(33.33% - 12px)
+		margin-right: 18px
+		text-decoration: none
+		background: #e9e9e9
+		transition: background-color .5s ease
+		margin-bottom: 18px
+		&:hover
+			background: #23385c
+			.news-date
+				color: rgba(255, 255, 255, 0.3)
+			.news-title
+				color: $white
+			.news-text
+				color: rgba(255, 255, 255, 0.8)
+			.news-item-block
+				background-color: #1d2f4e
+		&:nth-child(3n+3)
+			margin-right: 0
+		&-block
+			padding: 20px 40px 40px
+			background-color: #f5f5f5
+			transition: background-color .5s ease
+			&_project
+				padding: 10px 40px 30px
+	&-date
+		color: #84878e
+		font-size: 14px
+		font-weight: 500
+		transition: color .5s ease
+	&-title
+		color: $dark
+		font-family: Montserrat
+		font-size: 20px
+		font-weight: 700
+		line-height: 1.2
+		margin: 15px 0
+		transition: color .5s ease
+		&_project
+			margin: 15px 0 5px
+	&-text
+		color: #4c505d
+		font-size: 14px
+		font-weight: 500
+		line-height: 1.71
+		transition: color .5s ease
+	&-pages
+		display: flex
+		justify-content: center
+		margin-top: 40px
+		&-item
+			width: 50px
+			height: 50px
+			display: flex
+			align-items: center
+			justify-content: center
+			background: #e5e6e6
+			color: #8b8d96
+			font-size: 14px
+			font-weight: 600
+			margin: 0 2px
+			cursor: pointer
+			text-decoration: none
+			transition: all .5s ease
+			&:hover, &.active
+				background: $active
+				color: $white
+				rect
+					fill: $white
+			rect
+				transition: fill .5s ease
+		&-back
+			width: 90px
+			justify-content: flex-end
+			padding: 0 20px
+		&-next
+			width: 90px
+			justify-content: flex-start
+			padding: 0 20px
+		&-svg
+			width: 33px
+			height: 10px
+			&_back
+				transform: rotate(180deg)
+	&-content
+		margin-top: 120px
+	&-popup
+		position: fixed
+		width: 100%
+		height: 100vh
+		top: 0
+		left: 0
+		z-index: 2
+		background: rgba(0, 0, 0, 0.4)
+		display: flex
+		align-items: center
+		justify-content: center
+		opacity: 0
+		pointer-events: none
+		transition: opacity .5s ease
+		overflow: auto
+		&.flex-start
+			align-items: flex-start
+		&.active
+			opacity: 1
+			pointer-events: auto
+		&-container
+			width: 800px
+			background: #ffffff
+			position: relative
+			margin: 50px 0
+		&-block
+			padding: 40px 60px
+		&-img
+			width: 100%
+		&-title
+			color: #4c505d
+			font-size: 28px
+			font-weight: 700
+			line-height: 1.07
+			margin-bottom: 35px
+		&-text
+			color: #575757
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.75
+			margin-bottom: 20px
+		&-btns
+			display: flex
+			justify-content: space-between
+		&-btn
+			width: 90px
+			height: 50px
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			background: #f2f2f2
+			transition: background-color .5s ease
+			padding: 0 20px
+			rect
+				transition: fill .5s ease
+			&:hover
+				background: #e5e6e6
+				rect
+					fill: #8b8d96
+			&_next
+				justify-content: flex-start
+		&-svg
+			width: 33px
+			height: 10px
+			&_back
+				transform: rotate(180deg)
+
+.search
+	transition: fill .5s ease
+.project
+	&-search
+		width: 570px
+		&-input
+			width: 100%
+			color: #999a9f
+			font-family: 'Montserrat', sans-serif
+			font-size: 14px
+			font-weight: 500
+			padding: 15px 10px 15px 35px
+			background: url(../img/search.svg) no-repeat left center
+			background-size: 14px 14px
+			border: none
+			outline: none
+			border-bottom: 1px solid rgba(14, 14, 14, 0.1)
+		&-text
+			color: #4c505d
+			font-size: 14px
+			font-weight: 500
+			padding-left: 100px
+.contacts
+	padding: 100px 0 100px
+	&-flex
+		display: flex
+		justify-content: space-between
+	&-left
+		width: 640px
+		padding-left: 100px
+		&-block
+			margin-top: 80px
+	&-right
+		width: 490px
+		padding-right: 100px
+	&-form
+		margin-top: 80px
+		&-input
+			width: 100%
+			height: 46px
+			line-height: 46px
+			padding: 0 20px
+			background: #e7e7e7
+			color: #5c5e66
+			font-size: 14px
+			font-weight: 700
+			outline: none
+			border: none
+			margin-bottom: 20px
+		&-textarea
+			width: 100%
+			resize: none
+			height: 160px
+			background: #e7e7e7
+			color: #50525a
+			font-size: 14px
+			font-weight: 500
+			font-family: 'Montserrat', sans-serif
+			padding: 15px 20px
+			border: none
+			outline: none
+		&-label
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			margin-top: 35px
+		&-checkbox
+			width: 16px
+			height: 16px
+			margin: 0
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0
+			&:checked ~ .contacts-form-check:before
+				opacity: 1
+		&-text
+			color: #4d4d4d
+			font-size: 13px
+		&-check
+			width: 16px
+			height: 16px
+			flex-shrink: 0
+			margin-right: 15px
+			background: #e7e7e7
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				background: url(../img/chacked.svg) no-repeat center
+				background-size: 10px 8px
+				opacity: 0
+				transition: opacity .5s ease
+		&-btn
+			color: $white
+			font-size: 14px
+			font-weight: 700
+			background: $active url(../img/arrow-next.svg) no-repeat right 20px center
+			background-size: 33px 10px
+			border: none
+			outline: none
+			padding: 17px 95px 17px 20px
+			margin-top: 40px
+			cursor: pointer
+	&-map
+		height: 305px
+		margin-top: 30px
+.direction
+	padding: 100px 0 100px
+	&-list
+		display: flex
+		justify-content: space-between
+		margin-top: 75px
+	&-item
+		width: 388px
+		height: 500px
+		position: relative
+		text-decoration: none
+		&:hover
+			&:before
+				background: rgba(29, 47, 78, 0.3)
+			.direction-description
+				color: $white
+		&:before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+			background: rgba(29, 47, 78, 0.5)
+			z-index: 1
+			transition: background-color .5s ease
+		&-content
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+			align-items: flex-start
+			width: 100%
+			height: 100%
+			position: relative
+			z-index: 2
+			padding: 40px
+		&_first
+			background: url(../img/direction1.jpg) no-repeat center
+			background-size: cover
+		&_second
+			background: url(../img/direction2.jpg) no-repeat center
+			background-size: cover
+		&_third
+			background: url(../img/direction3.jpg) no-repeat center
+			background-size: cover
+	&-svg
+		width: 33px
+		height: 10px
+		margin-top: 35px
+		opacity: .5
+	&-description
+		color: rgba(255, 255, 255, 0.4)
+		font-size: 14px
+		font-weight: 500
+		line-height: 1.5
+		margin-top: 5px
+		transition: color .5s ease
+	&-title
+		color: $white
+		font-family: Montserrat
+		font-size: 28px
+		font-weight: 700
+.build
+	padding: 100px 0 0
+	&-content
+		padding-bottom: 65px
+.partners
+	padding: 100px 0 70px
+	&-img
+		width: 100%
+	&-list
+		padding: 0 100px
+		margin-top: 100px
+	&-item
+		display: flex
+		justify-content: flex-start
+		background-color: #f5f5f5
+		padding: 20px
+		margin-bottom: 30px
+	&-left
+		width: 265px
+		flex-shrink: 0
+		margin-right: 30px
+		background: #ffffff
+		padding: 40px
+		min-height: 160px
+		display: flex
+		align-items: center
+		justify-content: center
+	&-right
+		position: relative
+		padding-top: 10px
+		&-title
+			color: $dark
+			font-size: 20px
+			font-weight: 700
+			margin-bottom: 12px
+		&-text
+			color: #575757
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.75
+		&-link
+			color: $active
+			font-size: 14px
+			font-weight: 600
+			text-decoration: none
+			margin-top: 20px
+			display: inline-block
+		&-arrow
+			display: inline-block
+			width: 10px
+			height: 7px
+			margin-left: 5px
+	&-info
+		position: absolute
+		background: #ffffff
+		width: 100%
+		overflow: auto
+		padding: 25px 35px 25px
+		box-shadow:  0 10px 40px rgba(0, 0, 0, 0.15)
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		opacity: 0
+		pointer-events: none
+		transition: opacity .5s ease
+		z-index: 2
+		&.active
+			opacity: 1
+			pointer-events: auto
+		&-title
+			color: $dark
+			font-size: 20px
+			font-weight: 700
+		&-list
+			margin-top: 15px
+			height: 210px
+			overflow: auto
+		&-item
+			color: #575757
+			font-size: 13px
+			font-weight: 500
+			padding-left: 25px
+			margin: 14px 0
+			position: relative
+			&:last-child
+				margin-bottom: 0
+			&:before
+				position: absolute
+				content: ''
+				width: 4px
+				height: 4px
+				background-color: #c4262c
+				border-radius: 50%
+				left: 0
+				top: 5px
+		&-close
+			width: 50px
+			height: 50px
+			background: #f5f5f5 url(../img/close_dark.svg) no-repeat center
+			background-size: 12px 12px
+			cursor: pointer
+			position: absolute
+			top: 0
+			right: 0
+.certificate
+	&-content
+		display: flex
+		justify-content: flex-start
+		flex-wrap: wrap
+		margin-top: 110px
+	&-item
+		width: calc(33.33% - 12px)
+		margin-right: 18px
+		margin-bottom: 18px
+		padding: 40px 40px 30px
+		background: #ffffff
+		transition: background-color .5s ease
+		cursor: pointer
+		&:hover
+			background: #f5f5f5
+		&:nth-child(3n+3)
+			margin-right: 0
+	&-title
+		color: $dark
+		font-size: 20px
+		font-weight: 700
+		margin-top: 15px
+		&_white
+			color: $white
+	&-img
+		width: 100%
+	&-text
+		color: #4c505d
+		font-size: 14px
+		font-weight: 500
+		margin-top: 7px
+		&_white
+			color: $white
+	&-slider
+		&-item
+			text-align: center
+			outline: none
+		&-img
+			margin: 0 auto
+			width: 100%
+		&-relative
+			max-width: 400px
+			position: relative
+			margin: 50px auto
+	&-block
+		width: 100%
+		overflow: hidden
+	&-btns
+		width: 100%
+		position: fixed
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		display: flex
+		justify-content: space-between
+		pointer-events: none
+	&-btn
+		cursor: pointer
+		width: 90px
+		height: 50px
+		background: rgba(229, 230, 230, 0.2)
+		pointer-events: auto
+		transition: background-color .5s ease
+		padding: 0 20px
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		rect
+			transition: fill .5s ease
+		svg
+			width: 33px
+			height: 10px
+		&_back
+			justify-content: flex-end
+			svg
+				transform: rotate(180deg)
+		&:hover
+			background: #e5e6e6
+			rect
+				fill: #8b8d96
 @import "media" // Всегда в конце
