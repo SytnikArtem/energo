@@ -60,22 +60,22 @@ gulp.task('libs-js', function(){
 
 gulp.task('tiny', function(){
   return gulp.src('app/img/**/*.+(png|jpg|jpeg)')
-    .pipe(cache(tinypng({
-      key: 'IVBCPg0Rjh1AsWpQzuH9VSK5qla51OIx',
-      sigFile: 'images/.tinypng-sigs',
-      sameDest: true,
-      log: true
-    })))
+    // .pipe(cache(tinypng({
+    //   key: 'IVBCPg0Rjh1AsWpQzuH9VSK5qla51OIx',
+    //   sigFile: 'images/.tinypng-sigs',
+    //   sameDest: true,
+    //   log: true
+    // })))
     .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('img', ['tiny'], function(){
   return gulp.src('app/img/**/*.+(svg|ico)')
-    // .pipe(cache(imagemin({
-    //   interlaced: true,
-    //   progressive: true,
-    //   svgoPlugins: [{removeViewBox: false}]
-    // })))
+    .pipe(cache(imagemin({
+      interlaced: true,
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}]
+    })))
     .pipe(gulp.dest('dist/img'));
 });
 

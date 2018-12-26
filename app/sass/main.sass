@@ -97,6 +97,58 @@ img
 	margin: 0 auto
 .header
 	padding: 35px 0
+	position: relative
+	&-menu
+		position: fixed
+		width: calc(100% - 30px)
+		top: 0
+		height: 100vh
+		background: #1d2f4e
+		z-index: 1
+		padding: 80px 70px 50px
+		right: -100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		transition: all .5s ease
+		&.active
+			right: 0
+		&-link
+			color: $white
+			font-size: 12px
+			font-weight: 700
+			text-transform: uppercase
+			text-decoration: none
+		&-item
+			margin-bottom: 20px
+	&-btn
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		width: 80px
+		background: #1d2f4e
+		z-index: 2
+		display: none
+		&-line
+			width: 20px
+			height: 3px
+			background: $white
+			display: block
+			position: relative
+			transition: all .5s ease
+			top: 0
+			&_center
+				margin: 5px 0
+		&.active
+			.header-btn-line_center
+				opacity: 0
+			.header-btn-line_top
+				transform: rotate(225deg)
+				top: 8px
+			.header-btn-line_bottom
+				transform: rotate(-225deg)
+				top: -8px
 	&-flex
 		display: flex
 		align-items: center
@@ -166,7 +218,7 @@ img
 		color: $white
 		font-size: 68px
 		font-weight: 800
-		line-height: 0.85
+		line-height: 58px
 		text-transform: uppercase
 		max-width: 600px
 		padding-left: 100px
@@ -263,11 +315,10 @@ img
 		color: $dark
 		font-size: 34px
 		font-weight: 700
-		line-height: 0.82
+		line-height: 28px
 		position: relative
 		margin-left: 100px
 		width: 280px
-		line-height: 1
 		&_nomarg
 			margin-left: 0
 		&:before
@@ -463,12 +514,14 @@ img
 		opacity: 0
 .footer
 	background: #23385c
+	overflow: hidden
 	&-flex
 		display: flex
 		justify-content: space-between
 	&-left
 		width: 280px
 		padding: 60px 0
+		flex-shrink: 0
 		&-description
 			font-size: 12px
 			color: rgba(255, 255, 255, 0.8)
@@ -487,6 +540,8 @@ img
 			color: rgba(255, 255, 255, 0.3)
 			font-size: 12px
 			margin-top: 15px
+			&_mob
+				display: none
 	&-logo
 		width: 225px
 		display: inline-block
@@ -523,6 +578,7 @@ img
 		width: 345px
 		padding: 5px 0 0 60px
 		border-left: 1px solid rgba(255, 255, 255, 0.1)
+		position: relative
 		&-row
 			display: flex
 			align-items: center
@@ -672,7 +728,7 @@ img
 			flex-wrap: wrap
 			margin-top: 115px
 		&-item
-			width: 380px
+			width: calc(33.33% - 20px)
 			margin: 0 20px 20px 0
 			background: #f5f5f5
 			padding: 40px 55px 30px 40px
@@ -726,6 +782,7 @@ img
 		transition: opacity .5s ease
 		overflow: auto
 		cursor: auto
+		z-index: 2
 		&.active
 			pointer-events: auto
 			opacity: 1
@@ -761,6 +818,7 @@ img
 			font-size: 28px
 			font-weight: 700
 			line-height: 1.07
+			margin-bottom: 10px
 		&-list
 			margin-top: 35px
 		&-item
@@ -1012,6 +1070,7 @@ img
 		padding-left: 100px
 		&-block
 			margin-top: 80px
+			margin-right: 30px
 	&-right
 		width: 490px
 		padding-right: 100px
@@ -1099,10 +1158,13 @@ img
 		justify-content: space-between
 		margin-top: 75px
 	&-item
-		width: 388px
+		width: 33.3%
 		height: 500px
 		position: relative
 		text-decoration: none
+		margin-right: 18px
+		&:nth-child(3n+3)
+			margin-right: 0
 		&:hover
 			&:before
 				background: rgba(29, 47, 78, 0.3)
@@ -1339,4 +1401,17 @@ img
 			background: #e5e6e6
 			rect
 				fill: #8b8d96
+.about-third-row_reverse .about-third-right
+	padding-right: 30px
+.footer-contact-link
+	position: absolute
+	bottom: 0
+	left: 100px
+	color: rgba(255, 255, 255, 0.3)
+	font-size: 12px
+	text-decoration: underline
+.employees-item-block
+	overflow: hidden
+.employees-img, .news-img
+	width: 100%
 @import "media" // Всегда в конце

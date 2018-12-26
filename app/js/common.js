@@ -3,12 +3,30 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 7,
         slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    // centerMode: true,
+                    variableWidth: true
+                }
+            }
+        ]
         // variableWidth: true
     });
     $('.certificate-slider').slick({
         infinite: true,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows: false
     });
     var $body = $(window.document.body);
 
@@ -53,12 +71,27 @@ $(document).ready(function() {
     });
     function fixHeight() {
         var i;
+        var j;
+        var arr1 = [];
+        var arr2 = [];
         for (i = 0; i < $('.news-item-block').length; i++) {
             var blockHeight = $('.news-item-block').eq(i).height();
+            arr2.push(blockHeight);
         }
-        $('.news-item-block').height(Math.max(blockHeight));
+        for (j = 0; j < $('.employees-item-block').length; j++) {
+            var blockHeight2 = $('.employees-item-block').eq(j).height();
+            arr1.push(blockHeight2);
+        }
+        $('.news-item-block').height(Math.max(...arr2));
+        $('.employees-item-block').height(Math.min(...arr1));
     }
-    fixHeight();
+    if($(window).width() > 768) {
+        setTimeout(function(){
+            fixHeight();
+        },100)
+    }
+
+
     $('.partners-right-link').click(function(e){
         e.preventDefault();
         $('.partners-info').removeClass('active');
@@ -84,5 +117,15 @@ $(document).ready(function() {
     });
     $('.certificate-btn_back').click(function () {
         $('.certificate-slider').slick('slickPrev');
+    });
+    $('.header-btn').click(function () {
+       $(this).toggleClass('active');
+       $('.header-menu').toggleClass('active');
+       if($(this).hasClass('active')) {
+           bodyFreezeScroll();
+       }
+        else {
+           bodyUnfreezeScroll();
+       }
     });
 });
